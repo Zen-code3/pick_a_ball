@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Recreation</title>
+  <title>AAA Pickleball</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="court.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 
   <header class="sticky-header">
     <div class="nav-pill-container">
-      <div class="aaa-brand">AAA</div>
-      <div class="nav-links-group">
-        <a href="#page1" class="nav-link active">Page 1</a>
-        <a href="#page2" class="nav-link">Page 2</a>
-      </div>
+      <a href="#page1" class="aaa-brand">AAA Pickleball</a>
+      <nav class="nav-links-group">
+        <a href="#page1" class="nav-link active">Court</a>
+        <a href="#page2" class="nav-link">About</a>
+        <a href="#page3" class="nav-link">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -47,25 +51,92 @@
           </div>
         </div>
       </div>
-
-      <div class="info-card">
-        <h2>This is sample good title</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Praesentium iure quisquam unde ea iusto fuga similique ex? Sint nulla blanditiis voluptatum enim voluptate perspiciatis quae. Autem nisi tenetur excepturi vel.
-        </p>
-        <button class="learn-btn">Learn More</button>
-      </div>
     </div>
   </section>
 
   <section id="page2" class="page-section">
     <div class="main-wrapper">
-      <div class="info-card" style="width: 100%;">
-        <h2>Page 2 Content</h2>
-        <p>ngani unsay sunod?</p>
+      <div class="info-card about-card">
+        <h2>About AAA Pickleball</h2>
+        <p>
+          AAA Pickleball is your community hub for courts, clinics, and friendly competition. Whether you are picking up a paddle for the first time or chasing tournament points, we keep the game accessible, fun, and welcoming for every skill level.
+        </p>
+        <ul class="feature-list">
+          <li>Open play sessions throughout the week</li>
+          <li>Beginner lessons and skill-building drills</li>
+          <li>League nights and local tournaments</li>
+        </ul>
+        <button class="learn-btn" type="button" onclick="document.getElementById('page3').scrollIntoView({behavior:'smooth'})">Contact Us</button>
       </div>
     </div>
   </section>
+
+  <section id="page3" class="page-section">
+    <div class="main-wrapper">
+      <div class="info-card contact-card">
+        <h2>Contact Us</h2>
+        <p class="contact-intro">
+          Questions about court times, memberships, or events? Reach out and we will get back to you as soon as we can.
+        </p>
+
+        <div class="contact-layout">
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:hello@aaapickleball.com">hello@aaapickleball.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+15551234567">(555) 123-4567</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Location</span>
+              <span>123 Court Lane, Your City, ST 12345</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Hours</span>
+              <span>Mon–Sun: 7:00 AM – 9:00 PM</span>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <label class="form-field">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="form-field">
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+            </label>
+            <button class="learn-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.page-section');
+
+    function setActiveNav() {
+      let current = 'page1';
+      sections.forEach((section) => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) current = section.getAttribute('id');
+      });
+      links.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveNav);
+    setActiveNav();
+  </script>
 
 </body>
 </html>

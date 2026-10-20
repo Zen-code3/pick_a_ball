@@ -1,0 +1,28 @@
+.about-card {
+  flex: 1 1 20rem;
+  max-width: 40rem;
+  align-self: center;
+}
+
+.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: left;
+}
+
+.feature-list li {
+  flex: 1 1 12rem;
+  min-width: 0;
+  padding: 12px 14px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.5;
+  box-sizing: border-box;
+}

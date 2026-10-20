@@ -1,0 +1,48 @@
+.court-container {
+  flex: 1 1 100%;
+  width: 100%;
+  min-width: 0;
+  background-color: #000000;
+  border: 2px solid #000000;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  height: min(55vh, 384px);
+  min-height: 220px;
+  box-sizing: border-box;
+}
+
+.court-side {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.court-row {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+}
+
+.green-box {
+  flex: 1 1 0;
+  min-width: 0;
+  background-color: #059669;
+  border: 1px solid #000000;
+}
+
+.blue-strip {
+  flex: 0 0 16%;
+  min-height: 40px;
+  background-color: #2563eb;
+  border: 1px solid #000000;
+}
+
+.net-divider {
+  flex: 0 0 12px;
+  min-width: 8px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
